@@ -1,0 +1,22 @@
+project.ext {
+    bundleInportPackages = [
+        '*'
+    ]
+
+    bundleExportPackages = [
+        '*'
+    ]
+}
+
+dependencies {
+    compile project(':karaf-common')
+    compile project(':karaf-cluster-common')
+    compile project(':karaf-cluster-common-hazelcast')
+}
+
+jar {
+    manifest {
+        instruction 'Import-Package' , bundleInportPackages.join(',')
+        instruction 'Export-Package' , bundleExportPackages.join(',')
+    }
+}

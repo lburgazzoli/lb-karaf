@@ -1,0 +1,20 @@
+project.ext {
+    bundleInportPackages = [
+        '*'
+    ]
+
+    bundleExportPackages = [
+        '*'
+    ]
+}
+
+dependencies {
+    compile project(':karaf-common')
+}
+
+jar {
+    manifest {
+        instruction 'Import-Package' , bundleInportPackages.join(',')
+        instruction 'Export-Package' , bundleExportPackages.join(',')
+    }
+}

@@ -1,0 +1,6 @@
+
+include "karaf-common"
+include "karaf-cluster-common"
+include "karaf-cluster-common-hazelcast"
+include "karaf-cluster-agent"
+

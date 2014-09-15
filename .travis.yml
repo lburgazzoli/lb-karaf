@@ -1,0 +1,9 @@
+language: java
+script:
+- "./gradlew uploadArchives"
+jdk:
+- oraclejdk7
+env:
+  global:
+  - secure: Tzk0Q8MkuR5zKVgJ2jxsJxVn6VkzZl0+MW/U7XdjlEc3vBtC+AJCUDGCJCrYMpSQGXXPwA+A6ozSowZRe0lyAMn96hdb5sXyhIqOVNYqe+IiIFWkqRET8ZINDHsM37l92Yb+d47A1DkmJNK8Zis8nBDfQLVAV58GCqvkqod8bNc=
+  - secure: fQZp2jKFtgu+mYU9+rKN7ozZ2P7Me36Wh31G4AQtO3Tl+UFHnuo4da+a0JhAyIniLZD8z6yLimPKh3jkGuHbx2yD6Pn6DvyEIwf2q2NkZAOmxpkZ4xELEAZcjih0xHHdsLp4yqZSFfuck9McRejpc6ii0bR2ZzQfYBl+N6jhdvs=
