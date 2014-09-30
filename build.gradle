@@ -11,9 +11,10 @@ buildscript {
     }
     dependencies {
         classpath 'org.gradle.api.plugins:gradle-nexus-plugin:0.7.1'
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.5-beta-6'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.5'
     }
 }
+
 // *****************************************************************************
 //
 // *****************************************************************************
