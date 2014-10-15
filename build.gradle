@@ -6,8 +6,6 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
-        maven { url "http://repo.spring.io/snapshot" }
-        maven { url "http://repo.spring.io/milestone" }
     }
     dependencies {
         classpath 'com.bmuschko:gradle-nexus-plugin:2.0'
