@@ -29,7 +29,7 @@ subprojects {
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
-    version             = '3.0.2.SNAPSHOT'
+    version             = '3.0.2-SNAPSHOT'
     group               = 'com.github.lburgazzoli'
 
     project.ext {
@@ -101,7 +101,7 @@ subprojects {
         manifest.attributes['Bundle-Description'     ] = "lb :: ${project.name}"
         manifest.attributes['Bundle-Name'            ] = "lb :: ${project.name}"
         manifest.attributes['Bundle-SymbolicName'    ] = "lb-${project.name}"
-        manifest.attributes['Bundle-Version'         ] = project.version
+        manifest.attributes['Bundle-Version'         ] = project.version.replaceAll('-','.')
         manifest.attributes['Implementation-Title'   ] = "lb-${project.name}-${project.version}"
         manifest.attributes['Implementation-Version' ] = project.version
         manifest.attributes['Implementation-Vendor'  ] = 'lb'
