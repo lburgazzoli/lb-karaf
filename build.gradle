@@ -66,6 +66,7 @@ subprojects {
         deploySnapshot      = "https://oss.sonatype.org/content/repositories/snapshots"
         gradleVersion       = '2.1'
         gradleScriptDir     = "${rootProject.projectDir}/gradle"
+        osgiVersion         = project.version.replaceAll('-','.')
     }
 
     repositories {
@@ -101,9 +102,9 @@ subprojects {
         manifest.attributes['Bundle-Description'     ] = "lb :: ${project.name}"
         manifest.attributes['Bundle-Name'            ] = "lb :: ${project.name}"
         manifest.attributes['Bundle-SymbolicName'    ] = "lb-${project.name}"
-        manifest.attributes['Bundle-Version'         ] = project.version.replaceAll('-','.')
-        manifest.attributes['Implementation-Title'   ] = "lb-${project.name}-${project.version}"
-        manifest.attributes['Implementation-Version' ] = project.version
+        manifest.attributes['Bundle-Version'         ] = osgiVersion
+        manifest.attributes['Implementation-Title'   ] = "lb-${project.name}-${osgiVersion}"
+        manifest.attributes['Implementation-Version' ] = osgiVersion
         manifest.attributes['Implementation-Vendor'  ] = 'lb'
 
         manifest.classesDir = new File("$buildDir/classes/main")
