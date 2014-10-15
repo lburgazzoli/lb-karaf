@@ -48,7 +48,7 @@ subprojects {
             jacksonDatabind    : '2.4.2',
             jacksonSmile       : '2.4.2',
             jacksonBson        : '2.4.0',
-            lbHazelcast        : '3.3.0-SNAPSHOT'
+            lbHazelcast        : '3.3.1-SNAPSHOT'
         ]
 
         if(project.hasProperty('sonatypeUsername') && project.hasProperty('sonatypePassword')) {

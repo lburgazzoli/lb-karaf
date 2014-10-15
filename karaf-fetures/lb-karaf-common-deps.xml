@@ -16,7 +16,7 @@
     limitations under the License.
 -->
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0" name="lb-karaf-common-deps-3.0.1">
-  <feature name="lb-karaf-common-deps" version="3.0.1.SNAPSHOT" description="lb :: karaf :: common :: deps">
+  <feature name="lb-karaf-common-deps" version="3.0.2.SNAPSHOT" description="lb :: karaf :: common :: deps">
     <bundle>mvn:org.apache.commons/commons-lang3/3.3.2</bundle>
     <bundle>mvn:com.google.guava/guava/18.0</bundle>
     <bundle>mvn:org.hsqldb/hsqldb/2.3.1</bundle>
