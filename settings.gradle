@@ -4,3 +4,6 @@ include "karaf-cluster-common"
 include "karaf-cluster-common-hazelcast"
 include "karaf-cluster-agent"
 
+rootProject.children.each { 
+    it.name = "lb-" + it.name 
+}

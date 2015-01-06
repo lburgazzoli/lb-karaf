@@ -9,7 +9,7 @@ project.ext {
 }
 
 dependencies {
-    compile project(':karaf-common')
+    compile project(':lb-karaf-common')
 }
 
 jar {

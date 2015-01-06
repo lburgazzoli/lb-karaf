@@ -9,9 +9,9 @@ project.ext {
 }
 
 dependencies {
-    compile project(':karaf-common')
-    compile project(':karaf-cluster-common')
-    compile project(':karaf-cluster-common-hazelcast')
+    compile project(':lb-karaf-common')
+    compile project(':lb-karaf-cluster-common')
+    compile project(':lb-karaf-cluster-common-hazelcast')
 }
 
 jar {

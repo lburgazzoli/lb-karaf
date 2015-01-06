@@ -9,7 +9,7 @@ project.ext {
 }
 
 dependencies {
-    compile project(':karaf-cluster-common')
+    compile project(':lb-karaf-cluster-common')
 
     compile "com.hazelcast:hazelcast-all:$versions.hazelcast"
     compile "com.github.lburgazzoli:lb-hazelcast-common:$versions.lbHazelcast"
