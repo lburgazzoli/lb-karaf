@@ -25,10 +25,10 @@
     <bundle>mvn:net.openhft/affinity/2.2</bundle>
 
     <!-- openhft :: chronicle -->
-    <bundle>mvn:net.openhft/chronicle-core/1.0.0-alapha-SNAPSHOT</bundle>
-    <bundle>mvn:net.openhft/chronicle-bytes/1.0.0-alapha-SNAPSHOT</bundle>
-    <bundle>mvn:net.openhft/chronicle-values/1.0.0-alapha-SNAPSHOT</bundle>
-    <bundle>mvn:net.openhft/chronicle-threads/1.0.0-alapha-SNAPSHOT</bundle>
-    <bundle>mvn:net.openhft/chronicle-wire/1.0.1-alapha-SNAPSHOT</bundle>
+    <bundle>mvn:net.openhft/chronicle-core/1.0.0-alpha-SNAPSHOT</bundle>
+    <bundle>mvn:net.openhft/chronicle-bytes/1.0.0-alpha-SNAPSHOT</bundle>
+    <bundle>mvn:net.openhft/chronicle-values/1.0.0-alpha-SNAPSHOT</bundle>
+    <bundle>mvn:net.openhft/chronicle-threads/1.0.0-alpha-SNAPSHOT</bundle>
+    <bundle>mvn:net.openhft/chronicle-wire/1.0.1-alpha-SNAPSHOT</bundle>
   </feature>
 </features>
