@@ -9,6 +9,7 @@ buildscript {
         jcenter()
     }
     dependencies {
+        //classpath 'be.jlr-home.gradle:scrPlugin:0.1.3'
         classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.8'
     }
@@ -23,6 +24,7 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'groovy'
     apply plugin: 'osgi'
+    //apply plugin: 'scr'
     apply plugin: 'maven'
     apply plugin: 'idea'
     apply plugin: 'com.bmuschko.nexus'
@@ -35,14 +37,16 @@ subprojects {
 
     project.ext {
         versions = [
-            slf4j              : '1.7.12',
-            log4j2             : '2.2',
-            felixConfigAdmin   : '1.8.2',
-            karaf              : '3.0.3',
-            guava              : '18.0',
-            commonsLang        : '3.4',
-            commonsCollections : '4.0',
-            osgi               : '5.0.0',
+            slf4j               : '1.7.12',
+            log4j2              : '2.2',
+            felixConfigAdmin    : '1.8.2',
+            felixScr            : '1.8.2',
+            felixScrAnnotations : '1.9.10',
+            karaf               : '3.0.3',
+            guava               : '18.0',
+            commonsLang         : '3.4',
+            commonsCollections  : '4.0',
+            osgi                : '5.0.0',
         ]
 
         if(project.hasProperty('sonatypeUsername') && project.hasProperty('sonatypePassword')) {
@@ -83,6 +87,7 @@ subprojects {
         compile "com.google.guava:guava:$versions.guava"
         compile "org.apache.commons:commons-lang3:$versions.commonsLang"
         compile "org.apache.felix:org.apache.felix.configadmin:$versions.felixConfigAdmin"
+        //compile "org.apache.felix:org.apache.felix.scr.annotations:$versions.felixScrAnnotations"
         compile "org.apache.karaf.shell:org.apache.karaf.shell.console:$versions.karaf"
         compile "org.apache.karaf.shell:org.apache.karaf.shell.table:$versions.karaf"
         compile "org.osgi:org.osgi.core:$versions.osgi"
