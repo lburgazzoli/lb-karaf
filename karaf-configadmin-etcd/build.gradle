@@ -8,6 +8,10 @@ project.ext {
     ]
 }
 
+dependencies {
+    compile "com.github.lburgazzoli:lb-etcd:$versions.lbEtcd"
+}
+
 jar {
     manifest {
        instruction 'Import-Package' , bundleInportPackages.join(',')
