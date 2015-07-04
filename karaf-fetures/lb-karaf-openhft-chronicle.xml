@@ -16,7 +16,7 @@
     limitations under the License.
 -->
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0" name="lb-karaf-common-deps-3.0.3">
-  <feature name="lb-karaf-openhft-chronicle" version="3.0.3.SNAPSHOT" description="lb :: karaf :: openhft-chronicle :: deps">
+  <feature name="lb-karaf-openhft-chronicle" version="4.0.4.SNAPSHOT" description="lb :: karaf :: openhft-chronicle :: deps">
     <!-- JNA -->
     <bundle>mvn:net.java.dev.jna/jna/4.1.0</bundle>
     <bundle>mvn:net.java.dev.jna/jna-platform/4.1.0</bundle>
