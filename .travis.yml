@@ -1,6 +1,7 @@
 language: java
 script:
-- "./gradlew uploadArchives"
+- "./gradlew :lb-karaf-common:uploadArchives"
+- "./gradlew :lb-karaf-configadmin-etcd:uploadArchives"
 jdk:
 - oraclejdk8
 env:
