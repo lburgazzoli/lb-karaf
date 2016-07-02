@@ -1,6 +1,5 @@
 
 include "karaf-common"
-include "karaf-configadmin-etcd"
 
 rootProject.children.each { 
     it.name = "lb-" + it.name 

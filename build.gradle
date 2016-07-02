@@ -48,7 +48,6 @@ subprojects {
             commonsCollections  : '4.0',
             osgi                : '6.0.0',
             osgiConpendium      : '5.0.0',
-            etcd4j              : '2.11.0'
         ]
 
         if(project.hasProperty('sonatypeUsername') && project.hasProperty('sonatypePassword')) {
