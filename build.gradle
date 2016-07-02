@@ -11,7 +11,7 @@ buildscript {
     dependencies {
         //classpath 'be.jlr-home.gradle:scrPlugin:0.1.3'
         classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.11.3'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.12.0'
     }
 }
 
@@ -37,18 +37,18 @@ subprojects {
 
     project.ext {
         versions = [
-            slf4j               : '1.7.12',
-            log4j2              : '2.2',
-            felixConfigAdmin    : '1.8.2',
+            slf4j               : '1.7.21',
+            log4j2              : '2.6.1',
+            felixConfigAdmin    : '1.8.8',
             felixScr            : '1.8.2',
             felixScrAnnotations : '1.9.10',
-            karaf               : '4.0.0',
-            guava               : '18.0',
+            karaf               : '4.0.5',
+            guava               : '19.0',
             commonsLang         : '3.4',
             commonsCollections  : '4.0',
             osgi                : '6.0.0',
             osgiConpendium      : '5.0.0',
-            etcd4j              : '2.7.0'
+            etcd4j              : '2.11.0'
         ]
 
         if(project.hasProperty('sonatypeUsername') && project.hasProperty('sonatypePassword')) {
