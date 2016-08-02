@@ -1,0 +1,122 @@
+<!--
+
+     Copyright 2005-2016 Red Hat, Inc.
+
+     Red Hat licenses this file to you under the Apache License, version
+     2.0 (the "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+     implied.  See the License for the specific language governing
+     permissions and limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.lburgazzoli</groupId>
+  <artifactId>karaf-distro</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Karaf Distro</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <karaf.version>4.0.5</karaf.version>
+    <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
+    <jdk.version>1.8</jdk.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.karaf.features</groupId>
+      <artifactId>static</artifactId>
+      <version>${karaf.version}</version>
+      <type>kar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.karaf.features</groupId>
+      <artifactId>static</artifactId>
+      <classifier>features</classifier>
+      <version>${karaf.version}</version>
+      <type>xml</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.karaf.features</groupId>
+      <artifactId>standard</artifactId>
+      <classifier>features</classifier>
+      <version>${karaf.version}</version>
+      <type>xml</type>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>${maven-resources-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>process-resources</id>
+            <goals>
+              <goal>resources</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.karaf.tooling</groupId>
+        <artifactId>karaf-maven-plugin</artifactId>
+        <version>${karaf.version}</version>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <id>process-resources</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>assembly</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>package</id>
+            <goals>
+              <goal>archive</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <karafVersion>v4x</karafVersion>
+          <useReferenceUrls>true</useReferenceUrls>
+          <archiveZip>false</archiveZip>
+          <archiveTarGz>true</archiveTarGz>
+          <includeBuildOutputDirectory>false</includeBuildOutputDirectory>
+          <javase>${jdk.version}</javase>
+          <startupFeatures>
+            <startupFeature>jaas</startupFeature>
+            <startupFeature>bundle</startupFeature>
+            <startupFeature>config</startupFeature>
+            <startupFeature>log</startupFeature>
+            <startupFeature>service</startupFeature>
+            <startupFeature>config</startupFeature>
+          </startupFeatures>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
