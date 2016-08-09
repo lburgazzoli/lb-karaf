@@ -30,7 +30,7 @@
     <jdk.version>1.8</jdk.version>
     <karaf.version>4.0.5</karaf.version>
     <fabric8.version>2.2.148</fabric8.version>
-    <fabric8.kubernetes.version>1.4.1</fabric8.kubernetes.version>
+    <fabric8.kubernetes.version>1.4-SNAPSHOT</fabric8.kubernetes.version>
   </properties>
 
   <dependencies>
