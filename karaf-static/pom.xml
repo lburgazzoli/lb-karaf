@@ -21,15 +21,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.lburgazzoli</groupId>
-  <artifactId>karaf-distro</artifactId>
+  <artifactId>karaf-static</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>Karaf Distro</name>
+  <name>Karaf Static Distro</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <karaf.version>4.0.5</karaf.version>
-    <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
     <jdk.version>1.8</jdk.version>
+    <karaf.version>4.0.5</karaf.version>
   </properties>
 
   <dependencies>
@@ -58,27 +57,7 @@
   </dependencies>
 
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-    </resources>
-
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>${maven-resources-plugin.version}</version>
-        <executions>
-          <execution>
-            <id>process-resources</id>
-            <goals>
-              <goal>resources</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
       <plugin>
         <groupId>org.apache.karaf.tooling</groupId>
         <artifactId>karaf-maven-plugin</artifactId>
@@ -112,7 +91,9 @@
             <startupFeature>config</startupFeature>
             <startupFeature>log</startupFeature>
             <startupFeature>service</startupFeature>
-            <startupFeature>config</startupFeature>
+            <startupFeature>shell</startupFeature>
+            <startupFeature>aries-blueprint</startupFeature>
+            <startupFeature>scr</startupFeature>
           </startupFeatures>
         </configuration>
       </plugin>
