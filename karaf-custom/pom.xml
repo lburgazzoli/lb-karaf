@@ -21,26 +21,28 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.lburgazzoli</groupId>
-  <artifactId>karaf-static</artifactId>
+  <artifactId>karaf-kustom</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>Karaf Static Distro</name>
+  <name>Custom Karaf Distro</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jdk.version>1.8</jdk.version>
     <karaf.version>4.0.5</karaf.version>
+    <fabric8.version>2.2.148</fabric8.version>
+    <fabric8.kubernetes.version>1.4.1</fabric8.kubernetes.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.apache.karaf.features</groupId>
-      <artifactId>static</artifactId>
+      <artifactId>framework</artifactId>
       <version>${karaf.version}</version>
       <type>kar</type>
     </dependency>
     <dependency>
       <groupId>org.apache.karaf.features</groupId>
-      <artifactId>static</artifactId>
+      <artifactId>framework</artifactId>
       <classifier>features</classifier>
       <version>${karaf.version}</version>
       <type>xml</type>
@@ -53,6 +55,13 @@
       <version>${karaf.version}</version>
       <type>xml</type>
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.fabric8.kubernetes</groupId>
+      <artifactId>kubernetes-karaf</artifactId>
+      <version>${fabric8.kubernetes.version}</version>
+      <classifier>features</classifier>
+      <type>xml</type>
     </dependency>
   </dependencies>
 
@@ -86,6 +95,7 @@
           <includeBuildOutputDirectory>false</includeBuildOutputDirectory>
           <javase>${jdk.version}</javase>
           <startupFeatures>
+            <startupFeature>framework</startupFeature>
             <startupFeature>jaas</startupFeature>
             <startupFeature>bundle</startupFeature>
             <startupFeature>config</startupFeature>
@@ -94,7 +104,12 @@
             <startupFeature>shell</startupFeature>
             <startupFeature>aries-blueprint</startupFeature>
             <startupFeature>scr</startupFeature>
+            <startupFeature>kubernetes-client</startupFeature>
           </startupFeatures>
+          <startupBundles>
+            <bundle>mvn:commons-codec/commons-codec/1.10</bundle>
+            <bundle>mvn:io.fabric8/fabric8-karaf/${fabric8.version};start-level=60</bundle>
+          </startupBundles>
         </configuration>
       </plugin>
     </plugins>
