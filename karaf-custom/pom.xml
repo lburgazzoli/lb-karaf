@@ -29,7 +29,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jdk.version>1.8</jdk.version>
     <karaf.version>4.0.5</karaf.version>
-    <fabric8.version>2.2.148</fabric8.version>
+    <fabric8.version>2.2-SNAPSHOT</fabric8.version>
     <fabric8.kubernetes.version>1.4-SNAPSHOT</fabric8.kubernetes.version>
   </properties>
 
@@ -60,6 +60,13 @@
       <groupId>io.fabric8.kubernetes</groupId>
       <artifactId>kubernetes-karaf</artifactId>
       <version>${fabric8.kubernetes.version}</version>
+      <classifier>features</classifier>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>io.fabric8</groupId>
+      <artifactId>fabric8-karaf-features</artifactId>
+      <version>${fabric8.version}</version>
       <classifier>features</classifier>
       <type>xml</type>
     </dependency>
@@ -95,21 +102,19 @@
           <includeBuildOutputDirectory>false</includeBuildOutputDirectory>
           <javase>${jdk.version}</javase>
           <startupFeatures>
-            <startupFeature>framework</startupFeature>
-            <startupFeature>jaas</startupFeature>
-            <startupFeature>bundle</startupFeature>
-            <startupFeature>config</startupFeature>
-            <startupFeature>log</startupFeature>
-            <startupFeature>service</startupFeature>
-            <startupFeature>shell</startupFeature>
-            <startupFeature>aries-blueprint</startupFeature>
-            <startupFeature>scr</startupFeature>
-            <startupFeature>kubernetes-client</startupFeature>
+            <feature>framework</feature>
+            <feature>jaas</feature>
+            <feature>bundle</feature>
+            <feature>config</feature>
+            <feature>log</feature>
+            <feature>service</feature>
+            <feature>shell</feature>
+            <feature>aries-blueprint</feature>
+            <feature>scr</feature>
+            <feature>kubernetes-client</feature>
+            <feature>fabric8-karaf-blueprint</feature>
+            <feature>fabric8-karaf-cm</feature>
           </startupFeatures>
-          <startupBundles>
-            <bundle>mvn:commons-codec/commons-codec/1.10</bundle>
-            <bundle>mvn:io.fabric8/fabric8-karaf/${fabric8.version};start-level=60</bundle>
-          </startupBundles>
         </configuration>
       </plugin>
     </plugins>
